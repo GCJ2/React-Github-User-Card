@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import UserDisplay from "./components/UserDisplay"
+import UserDisplay from "./components/UserDispaly/UserDisplay"
 import Search from './components/Search'
-
-
+import Header from './components/header/Header'
 import './App.css';
 
 const App = () => {
@@ -12,7 +11,7 @@ const App = () => {
 
 
   const fetchUser = (user) => {
-    axios.get(`https://api.github.com/users/${user}`)
+    axios.get(`https://api.github.com/users/gcj2`)
       .then (res => {
         // console.log(res.data);
         setUserInfo(res.data)
@@ -22,16 +21,17 @@ const App = () => {
       })
   };
 
-  // useEffect(() => {
-  //   fetchUser()
-  // }, []);
+  useEffect(() => {
+    fetchUser()
+  }, []);
 
   return (
     <div>
+      <Header/>
+      <Search fetchUser = {fetchUser}/>
       <UserDisplay
         user={userInfo}
       />
-      <Search fetchUser = {fetchUser}/>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserDisplay.scss'
 
 const UserDisplay = ({user}) => {
   if (user) {
@@ -9,6 +10,7 @@ const UserDisplay = ({user}) => {
     <div>
       {!user ? <h1>Please enter a GitHub User</h1>
         : <div className='user-card'>
+          <img src={user.avatar_url} alt=""/>
           <div className='user-card-top'>
             <div className='user-card-top-row'>
               <div className='user-card-left-content'>
@@ -25,7 +27,6 @@ const UserDisplay = ({user}) => {
               </div>
             </div>
           </div>
-          <img src={user.avatar_url} alt=""/>
         </div>}
 
     </div>
