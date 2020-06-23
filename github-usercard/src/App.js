@@ -8,7 +8,6 @@ import './App.css';
 const App = () => {
 
   const [userInfo, setUserInfo] = useState(null);
-  const [trigger, setTrigger] = useState(false);
 
   const fetchUser = (user) => {
     axios.get(`https://api.github.com/users/${user}`)
@@ -30,10 +29,7 @@ const App = () => {
       <Header/>
       <Search fetchUser={fetchUser}/>
       <UserDisplay
-        user={userInfo}
-        trigger={trigger}
-        setTrigger={setTrigger}
-      />
+        user={userInfo}/>
     </div>
   );
 };

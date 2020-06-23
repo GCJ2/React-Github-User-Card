@@ -2,12 +2,10 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import FollowerCard from "../FollowerCard/FollowerCard";
 
-const Followers = ({followersURL, trigger, setTrigger}) => {
-  console.log(trigger);
+const Followers = ({followersURL}) => {
   const [followers, setFollowers] = useState([]);
 
   const fetchFollowers = () => {
-    // setTrigger(!trigger);
     axios.get(followersURL)
       .then(res => {
         // console.log(res.data);

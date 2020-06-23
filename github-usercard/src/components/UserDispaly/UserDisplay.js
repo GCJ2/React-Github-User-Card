@@ -3,7 +3,7 @@ import './UserDisplay.scss'
 import Followers from "../followers/Followers";
 import Repos from "../Repos/Repos";
 
-const UserDisplay = ({user, trigger, setTrigger}) => {
+const UserDisplay = ({user}) => {
   if (user) {
     console.log(user);
   }
@@ -35,9 +35,7 @@ const UserDisplay = ({user, trigger, setTrigger}) => {
         </div>}
       <div className='bottom-content'>
         {user ?
-          <Followers followersURL={user.followers_url}
-                     trigger={trigger}
-                     setTrigger={setTrigger}/>
+          <Followers followersURL={user.followers_url}/>
           : null}
         {/*<Repos/>*/}
       </div>
