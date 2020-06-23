@@ -8,10 +8,10 @@ import './App.css';
 const App = () => {
 
   const [userInfo, setUserInfo] = useState(null);
-
+  const [trigger, setTrigger] = useState(false);
 
   const fetchUser = (user) => {
-    axios.get(`https://api.github.com/users/gcj2`)
+    axios.get(`https://api.github.com/users/${user}`)
       .then (res => {
         // console.log(res.data);
         setUserInfo(res.data)
@@ -21,16 +21,18 @@ const App = () => {
       })
   };
 
-  useEffect(() => {
-    fetchUser()
-  }, []);
+  // useEffect(() => {
+  //   fetchUser()
+  // }, []);
 
   return (
     <div>
       <Header/>
-      <Search fetchUser = {fetchUser}/>
+      <Search fetchUser={fetchUser}/>
       <UserDisplay
         user={userInfo}
+        trigger={trigger}
+        setTrigger={setTrigger}
       />
     </div>
   );

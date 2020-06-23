@@ -10,7 +10,7 @@ const Search = ({fetchUser}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchUser(user);
-    setUser('');
+    // setUser('');
   };
 
   return (
