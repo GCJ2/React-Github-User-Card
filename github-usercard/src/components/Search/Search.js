@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './Search.scss'
 
 const Search = ({fetchUser}) => {
   const [user, setUser] = useState('');
@@ -14,7 +15,7 @@ const Search = ({fetchUser}) => {
   };
 
   return (
-    <div>
+    <div className='search-component'>
       <form onSubmit={handleSubmit}>
         <input
           type='text'

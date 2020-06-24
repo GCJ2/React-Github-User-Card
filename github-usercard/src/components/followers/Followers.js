@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import FollowerCard from "../FollowerCard/FollowerCard";
+import './Followers.scss'
 
 const Followers = ({followersURL}) => {
   const [followers, setFollowers] = useState([]);
@@ -16,18 +17,20 @@ const Followers = ({followersURL}) => {
 
   useEffect(() => {
     fetchFollowers()
-  }, []);
+  }, [followersURL]);
 
   if (followers.length !== 0) {
     console.log(followers)
   }
 
   return (
-    <div>
+    <div className='followers'>
       <h2>Followers</h2>
-      {followers.map(follower => (
-        <FollowerCard key={follower.id} follower={follower}/>
-      ))}
+      <div className='followers-list'>
+        {followers.map(follower => (
+          <FollowerCard key={follower.id} follower={follower}/>
+        ))}
+      </div>
     </div>
   );
 };

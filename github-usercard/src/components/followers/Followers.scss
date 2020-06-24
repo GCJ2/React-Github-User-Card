@@ -1,0 +1,11 @@
+.followers {
+  border: 1px solid black;
+  text-align: center;
+  width: 50%;
+
+  .followers-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

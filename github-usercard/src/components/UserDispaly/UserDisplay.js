@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './UserDisplay.scss'
 import Followers from "../followers/Followers";
 import Repos from "../Repos/Repos";
@@ -9,35 +9,36 @@ const UserDisplay = ({user}) => {
   }
 
   return (
-    <div>
+    <div className='user-display'>
       {!user ? <h1>Please enter a GitHub User</h1>
         : <div className='user-card'>
-          <img src={user.avatar_url} alt="User profile" className='profile-picture'/>
           <div className='user-card-top'>
-            <div className='user-card-top-row'>
-              <div className='user-card-left-content'>
-                <div className='name-link'>
+            <div className='top-row'>
+              <img src={user.avatar_url} alt="User profile" className='profile-picture'/>
+              <div className='right-content'>
+                <div className='name-links'>
                   <h1>{user.name}</h1>
-                  <h4>@{user.login}</h4>
+                  <a href={user.html_url} target='_blank'>@{user.login}</a>
                 </div>
-                <p>{user.bio}</p>
-                <p>{user.location}</p>
-                <p>{user.blog}</p>
-              </div>
-              <div className='user-card-right-content'>
-                <div className='followers-following'>
+                <div className='about-content'>
+                  <p>{user.bio}</p>
+                  <p>{user.location}</p>
+                  <a href={user.blog}>{user.blog}</a>
                   <p>Followers: {user.followers}</p>
                   <p>Following: {user.following}</p>
                 </div>
               </div>
             </div>
+
           </div>
         </div>}
       <div className='bottom-content'>
         {user ?
+          <Repos reposURL={user.repos_url}/>
+          : null}
+        {user ?
           <Followers followersURL={user.followers_url}/>
           : null}
-        {/*<Repos/>*/}
       </div>
     </div>
   );
