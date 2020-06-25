@@ -1,5 +1,4 @@
 .followers {
-  //border: 1px solid black;
   text-align: center;
   width: 50%;
   @media (min-width: 780px) {
@@ -15,7 +14,5 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    //@media (max-width: 470px) {
-    //}
   }
 }

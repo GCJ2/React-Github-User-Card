@@ -12,7 +12,6 @@ const Search = ({fetchUser}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchUser(user);
-    // setUser('');
   };
 
   return (
@@ -25,7 +24,6 @@ const Search = ({fetchUser}) => {
           onChange={handleChange}
         />
         <Icon.Search className='search-icon' onClick={handleSubmit}/>
-        {/*<button className='submit-button'>Search</button>*/}
       </form>
     </div>
   );

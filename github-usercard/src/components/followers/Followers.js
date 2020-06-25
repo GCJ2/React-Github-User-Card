@@ -9,7 +9,6 @@ const Followers = ({followersURL}) => {
   const fetchFollowers = () => {
     axios.get(followersURL)
       .then(res => {
-        // console.log(res.data);
         setFollowers(res.data)
       })
       .catch(err => console.error())
