@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import UserDisplay from "./components/UserDispaly/UserDisplay"
 import Search from './components/Search/Search'
@@ -12,7 +12,6 @@ const App = () => {
   const fetchUser = (user) => {
     axios.get(`https://api.github.com/users/${user}`)
       .then (res => {
-        // console.log(res.data);
         setUserInfo(res.data)
       })
       .catch(err => {
@@ -20,9 +19,6 @@ const App = () => {
       })
   };
 
-  // useEffect(() => {
-  //   fetchUser()
-  // }, []);
 
   return (
     <div>
