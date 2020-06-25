@@ -1,3 +1,7 @@
+.conditional-statement {
+  text-align: center;
+}
+
 .user-card {
   //border: 1px solid black;
   display: flex;
@@ -12,6 +16,22 @@
   .top-row {
     display: flex;
     flex-direction: row;
+    @media (max-width: 550px) {
+      flex-direction: column;
+    }
+
+    .right-content {
+      max-width: 350px;
+      //border: 1px solid red;
+      margin: auto;
+
+    .about-content {
+      //border: 1px solid black;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    }
   }
 
   .profile-picture {
@@ -20,23 +40,21 @@
     border-radius: 8px;
     //margin: auto;
     margin-right: 20px;
+    @media (max-width: 550px) {
+      margin: auto;
+    }
   }
 
-  .name-link {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    margin-bottom: 0;
+  .name-links {
+    margin: auto;
+    //border: 1px solid black;
 
-    .name-links {
-      margin: auto;
-      h1 {
-        margin-bottom: 0;
-      }
+    h1 {
+      margin-bottom: 0;
     }
   }
 }
+
 
 .bottom-content {
   display: flex;

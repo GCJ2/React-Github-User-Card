@@ -10,7 +10,7 @@ const UserDisplay = ({user}) => {
 
   return (
     <div className='user-display'>
-      {!user ? <h1>Please enter a GitHub User</h1>
+      {!user ? <h1 className='conditional-statement'>Please enter a GitHub User</h1>
         : <div className='user-card'>
           <div className='user-card-top'>
             <div className='top-row'>
@@ -23,13 +23,12 @@ const UserDisplay = ({user}) => {
                 <div className='about-content'>
                   <p>{user.bio}</p>
                   <p>{user.location}</p>
-                  <a href={user.blog}>{user.blog}</a>
                   <p>Followers: {user.followers}</p>
                   <p>Following: {user.following}</p>
+                  <a href={user.blog}>{user.blog}</a>
                 </div>
               </div>
             </div>
-
           </div>
         </div>}
       <div className='bottom-content'>

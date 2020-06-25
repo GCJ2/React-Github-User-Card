@@ -10,7 +10,7 @@ const App = () => {
   const [userInfo, setUserInfo] = useState(null);
 
   const fetchUser = (user) => {
-    axios.get(`https://api.github.com/users/${user}`)
+    axios.get(`https://api.github.com/users/gcj2`)
       .then (res => {
         // console.log(res.data);
         setUserInfo(res.data)
@@ -20,9 +20,9 @@ const App = () => {
       })
   };
 
-  // useEffect(() => {
-  //   fetchUser()
-  // }, []);
+  useEffect(() => {
+    fetchUser()
+  }, []);
 
   return (
     <div>
