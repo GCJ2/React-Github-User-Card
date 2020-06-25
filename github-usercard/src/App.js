@@ -10,7 +10,7 @@ const App = () => {
   const [userInfo, setUserInfo] = useState(null);
 
   const fetchUser = (user) => {
-    axios.get(`https://api.github.com/users/gcj2`)
+    axios.get(`https://api.github.com/users/${user}`)
       .then (res => {
         // console.log(res.data);
         setUserInfo(res.data)
@@ -20,14 +20,16 @@ const App = () => {
       })
   };
 
-  useEffect(() => {
-    fetchUser()
-  }, []);
+  // useEffect(() => {
+  //   fetchUser()
+  // }, []);
 
   return (
     <div>
-      <Header/>
-      <Search fetchUser={fetchUser}/>
+      <div className='header-container'>
+        <Header/>
+        <Search fetchUser={fetchUser}/>
+      </div>
       <UserDisplay
         user={userInfo}/>
     </div>

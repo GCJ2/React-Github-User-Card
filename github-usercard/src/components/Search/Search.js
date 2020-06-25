@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import * as Icon from 'react-feather'
 import './Search.scss'
 
 const Search = ({fetchUser}) => {
@@ -16,14 +17,15 @@ const Search = ({fetchUser}) => {
 
   return (
     <div className='search-component'>
-      <form onSubmit={handleSubmit}>
+      <form className='search-form' onSubmit={handleSubmit}>
         <input
           type='text'
           placeholder='Enter a user'
           value={user}
           onChange={handleChange}
         />
-        <button>Search</button>
+        <Icon.Search className='search-icon' onClick={handleSubmit}/>
+        {/*<button className='submit-button'>Search</button>*/}
       </form>
     </div>
   );
