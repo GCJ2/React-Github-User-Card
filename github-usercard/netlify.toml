@@ -4,7 +4,7 @@
 # build command for netlify is npm run build or yarn build.
 [build]
   command = "yarn build"
-  base = "frontend/"
+  base = "github-usercard/"
   publish = "build/"
 
   # A basic redirect rule
